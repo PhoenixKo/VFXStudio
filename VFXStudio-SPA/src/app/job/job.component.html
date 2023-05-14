@@ -1,0 +1,36 @@
+<div class="container">
+<form (ngSubmit)="postJob()" #jobPostForm="ngForm"  role="form" id="jobForm"> 
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Име на позицията</span>
+  </div>
+  <input type="text" class="form-control"  type="text" required [(ngModel)]="model.jobtitle" name="jobtitle">
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Нужни умения</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea" required type="text" [(ngModel)]="model.jobskill" name="jobskill" ></textarea>
+</div>
+
+<div class="input-group mt-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Отговорности на работата</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea" type="text" required [(ngModel)]="model.jobresponsibility" name="jobresponsibility"></textarea>
+</div>
+
+<button [disabled]="!jobPostForm.valid" class="btn btn-success" type="submit">Публикувай</button>
+
+</form>
+</div>
+
+<div *ngFor="let value of values">
+  <div class="container">
+  <accordion>
+    <accordion-group heading="{{value.jobTitle}}">
+    </accordion-group>
+    <button id="deletebutton" (click)="deletePost(value.id)">Delete!</button>
+  </accordion>
+  </div>
+</div>

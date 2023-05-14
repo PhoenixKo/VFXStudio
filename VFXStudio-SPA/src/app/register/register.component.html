@@ -1,0 +1,23 @@
+<div class="container">
+<form #registerForm="ngForm" (ngSubmit)="register()">
+  <h2 class="text-center text-primary">Регистрирай се!</h2>
+  <hr>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="username" [(ngModel)]="model.username" placeholder="Име">
+  </div>
+
+
+
+  <div class="form-group">
+    <input type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Парола">
+  </div>
+
+  <div class="form-group text-center">
+    <button class="btn btn-success" type="submit">Регистрация</button>
+    <button class="btn btn-default" type="button" [routerLink]="['/home']"  >Откажи</button>
+  </div>
+  
+</form>
+</div>
+

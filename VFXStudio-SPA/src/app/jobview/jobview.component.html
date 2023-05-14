@@ -1,0 +1,16 @@
+<div *ngFor="let value of values">
+  <div class="container">
+
+  <accordion class="mt-3"[isAnimated]="true">
+    <accordion-group heading="{{value.jobTitle}}">
+      <h1>Нужни Умения</h1>
+      <p>{{value.jobSkill}}</p>
+      <hr>
+      <h1>Отгворности на длъжността</h1>
+      <p>{{value.jobResponsibility}}</p>
+    </accordion-group>
+
+  </accordion>
+  </div>
+</div>
+
